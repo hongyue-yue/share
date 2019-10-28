@@ -1,0 +1,934 @@
+{
+    "id_type": [
+        {
+            "value": "01",
+            "name": "身份证"
+        },
+        {
+            "value": "02",
+            "name": "军官证"
+        },
+        {
+            "value": "03",
+            "name": "护照"
+        },
+        {
+            "value": "04",
+            "name": "户口簿"
+        },
+        {
+            "value": "05",
+            "name": "士兵证"
+        },
+        {
+            "value": "06",
+            "name": "港澳来往内地通行证"
+        },
+        {
+            "value": "07",
+            "name": "台湾同胞来往内地通行证"
+        },
+        {
+            "value": "08",
+            "name": "临时身份证"
+        },
+        {
+            "value": "09",
+            "name": "外国人居留证"
+        },
+        {
+            "value": "10",
+            "name": "警官证"
+        },
+        {
+            "value": "11",
+            "name": "营业执照"
+        },
+        {
+            "value": "12",
+            "name": "组织机构代码证"
+        },
+        {
+            "value": "13",
+            "name": "税务登记证"
+        },
+        {
+            "value": "14",
+            "name": "统一社会信用代码证"
+        },
+        {
+            "value": "99",
+            "name": "其他"
+        }
+    ],
+    "id_no": [],
+    "dc_flag": [
+        {
+            "value": "1",
+            "name": "借"
+        },
+        {
+            "value": "2",
+            "name": "贷"
+        }
+    ],
+    "rp_flag": [
+        {
+            "value": "1",
+            "name": "付"
+        },
+        {
+            "value": "2",
+            "name": "收"
+        }
+    ],
+    "trm_type": [
+        {
+            "value": "01",
+            "name": "电脑PC"
+        },
+        {
+            "value": "02",
+            "name": "手机"
+        },
+        {
+            "value": "03",
+            "name": "平板设备"
+        },
+        {
+            "value": "04",
+            "name": "可穿戴设备"
+        },
+        {
+            "value": "05",
+            "name": "数字电视"
+        },
+        {
+            "value": "06",
+            "name": "条码支付受理终端"
+        },
+        {
+            "value": "99",
+            "name": "其他"
+        }
+    ],
+    "trade_status":[
+         {
+           "value": "0",
+           "name": "支付中"
+         },
+         {
+           "value": "1",
+           "name": "交易成功"
+         },
+         {
+           "value": "2",
+           "name": "已冲正"
+         },
+         {
+           "value": "3",
+           "name": "交易撤销"
+         },
+         {
+           "value": "4",
+           "name": "已退款"
+         }
+    ],
+    "trx_status": [
+        {
+            "value": "00",
+            "name": "交易成功"
+        },
+        {
+            "value": "01",
+            "name": "交易失败"
+        },
+        {
+            "value": "02",
+            "name": "待付款"
+        },
+        {
+            "value": "03",
+            "name": "处理中"
+        },
+        {
+            "value": "04",
+            "name": "关闭"
+        },
+        {
+            "value": "05",
+            "name": "已退款"
+        },
+        {
+            "value": "06",
+            "name": "已撤销"
+        },
+        {
+            "value": "07",
+            "name": "已退票"
+        },
+        {
+            "value": "08",
+            "name": "已冻结"
+        },
+        {
+            "value": "09",
+            "name": "已付款"
+        },
+        {
+            "value": "10",
+            "name": "已发货"
+        },
+        {
+            "value": "11",
+            "name": "待确认"
+        },{
+            "value": "13",
+            "name": "担保已付款-部分退款"
+        },{
+            "value": "14",
+            "name": "担保已发货-部分退款"
+        }
+    ],
+    "merchant_type": [
+        {
+            "value": "01",
+            "name": "法人"
+        },
+        {
+            "value": "02",
+            "name": "其他组织"
+        },
+        {
+            "value": "03",
+            "name": "个体工商户"
+        },
+        {
+            "value": "04",
+            "name": "自然人"
+        }
+    ],
+    "account_level": [
+        {
+            "value": "0",
+            "name": "默认缺省"
+        },
+        {
+            "value": "1",
+            "name": "Ⅰ类账户"
+        },
+        {
+            "value": "2",
+            "name": "Ⅱ类账户"
+        },
+        {
+            "value": "3",
+            "name": "Ⅲ类账户"
+        }
+    ],
+    "account_type": [
+        {
+            "value": "01",
+            "name": "个人银行借记账户"
+        },
+        {
+            "value": "02",
+            "name": "个人银行贷记账户"
+        },
+        {
+            "value": "03",
+            "name": "个人银行准贷记账户"
+        },
+        {
+            "value": "04",
+            "name": "个人支付账户"
+        },
+        {
+            "value": "05",
+            "name": "单位支付账户"
+        },
+        {
+            "value": "06",
+            "name": "对公银行账户"
+        },
+        {
+            "value": "07",
+            "name": "备付金账户"
+        },
+        {
+            "value": "08",
+            "name": "存折"
+        },
+        {
+            "value": "99",
+            "name": "其他"
+        }
+    ],
+    "biz_type": [
+        {
+            "value": "100001",
+            "name": "实物商品租购"
+        },
+        {
+            "value": "100002",
+            "name": "虚拟商品购买"
+        },
+        {
+            "value": "100003",
+            "name": "预付类账号充值"
+        },
+        {
+            "value": "100004",
+            "name": "航旅服务订购"
+        },
+        {
+            "value": "100005",
+            "name": "活动票务订购"
+        },
+        {
+            "value": "100006",
+            "name": "商业服务消费"
+        },
+        {
+            "value": "100007",
+            "name": "生活服务消费"
+        },
+        {
+            "value": "100099",
+            "name": "其他商家消费"
+        },
+        {
+            "value": "110002",
+            "name": "税费缴纳"
+        },
+        {
+            "value": "110003",
+            "name": "学校教育缴费"
+        },
+        {
+            "value": "110004",
+            "name": "医疗缴费"
+        },
+        {
+            "value": "110005",
+            "name": "罚款缴纳"
+        },
+        {
+            "value": "110006",
+            "name": "路桥通行缴费"
+        },
+        {
+            "value": "110007",
+            "name": "邮政缴费"
+        },
+        {
+            "value": "110008",
+            "name": "电视账单缴费"
+        },
+        {
+            "value": "110009",
+            "name": "话费账单缴费"
+        },
+        {
+            "value": "110010",
+            "name": "宽带账单缴费"
+        },
+        {
+            "value": "110011",
+            "name": "公益捐款"
+        },
+        {
+            "value": "110099",
+            "name": "其他公共服务"
+        },
+        {
+            "value": "120002",
+            "name": "基金认购"
+        },
+        {
+            "value": "120003",
+            "name": "保险购买"
+        },
+        {
+            "value": "120004",
+            "name": "信贷偿还"
+        },
+        {
+            "value": "120005",
+            "name": "商业众筹"
+        },
+        {
+            "value": "120006",
+            "name": "贵金属投资买入"
+        },
+        {
+            "value": "120007",
+            "name": "基金赎回"
+        },
+        {
+            "value": "120008",
+            "name": "基金到期返还"
+        },
+        {
+            "value": "120009",
+            "name": "认/购失败返还"
+        },
+        {
+            "value": "120010",
+            "name": "基金分红"
+        },
+        {
+            "value": "120011",
+            "name": "保险理赔"
+        },
+        {
+            "value": "120012",
+            "name": "保险红利发放"
+        },
+        {
+            "value": "120013",
+            "name": "贵金属投资卖出"
+        },
+        {
+            "value": "120014",
+            "name": "信贷发放"
+        },
+        {
+            "value": "120099",
+            "name": "其他互联网金融"
+        },
+        {
+            "value": "130002",
+            "name": "支付账户提现"
+        },
+        {
+            "value": "130003",
+            "name": "充值至他人支付账户"
+        },
+        {
+            "value": "130004",
+            "name": "提现至他人银行账户"
+        },
+        {
+            "value": "140099",
+            "name": "其他商户结算"
+        }
+    ],
+    "bk_acc_no": [],
+    "bk_acc_name": [],
+    "acc_no": [],
+    "acc_name": [],
+    "mobile_no": [],
+    "trx_type": [
+        {
+            "value": "01",
+            "name": "消费"
+        },
+        {
+            "value": "02",
+            "name": "充值"
+        },
+        {
+            "value": "04",
+            "name": "提现"
+        },
+        {
+            "value": "07",
+            "name": "担保交易"
+        },
+        {
+            "value": "10",
+            "name": "退款"
+        },{
+            "value": "12",
+            "name": "红包"
+        }
+    ],
+    "pay_type":[
+        {
+            "value": "0",
+            "name": "支出"
+        }, 
+        {
+            "value": "1",
+            "name": "收入"
+        }
+    ],
+    "trx_id": [],
+    "pay_id": [],
+    "payer_userid": [],
+    "payer_acc_no": [],
+    "payee_userid": [],
+    "payee_acc_no": [],
+    "trx_date_time": [],
+    "trx_finish_time": [],
+    "trx_time_stamp": [],
+    "order_id": [],
+    "order_amount": [],
+    "trx_amount": [],
+    "fee": [],
+    "ori_trx_id": [],
+    "ori_pay_id": [],
+    "ori_trx_amount": [],
+    "industry_type": [
+        {
+            "value": "1101",
+            "name": "电商/团购"
+        },
+        {
+            "value": "1201",
+            "name": "线下零售"
+        },
+        {
+            "value": "1301",
+            "name": "餐饮/食品"
+        },
+        {
+            "value": "1401",
+            "name": "生活/家居"
+        },
+        {
+            "value": "1501",
+            "name": "生活/咨询服务"
+        },
+        {
+            "value": "1601",
+            "name": "数码"
+        },
+        {
+            "value": "1701",
+            "name": "票务/旅游"
+        },
+        {
+            "value": "1801",
+            "name": "网络虚拟服务"
+        },
+        {
+            "value": "1901",
+            "name": "教育/培训"
+        },
+        {
+            "value": "2001",
+            "name": "娱乐/健身服务"
+        },
+        {
+            "value": "2101",
+            "name": "医疗"
+        },
+        {
+            "value": "2201",
+            "name": "票务"
+        },
+        {
+            "value": "2301",
+            "name": "书籍/音像/文具"
+        },
+        {
+            "value": "2401",
+            "name": "房地产"
+        },
+        {
+            "value": "2501",
+            "name": "交通运输服务"
+        },
+        {
+            "value": "2601",
+            "name": "生活缴费"
+        },
+        {
+            "value": "2701",
+            "name": "保险"
+        },
+        {
+            "value": "2801",
+            "name": "通信"
+        },
+        {
+            "value": "2901",
+            "name": "金融"
+        },
+        {
+            "value": "3001",
+            "name": "彩票"
+        },
+        {
+            "value": "3101",
+            "name": "其他"
+        },
+        {
+            "value": "1101",
+            "name": "电商/团购"
+        },
+        {
+            "value": "1201",
+            "name": "线下零售"
+        },
+        {
+            "value": "1301",
+            "name": "餐饮/食品"
+        },
+        {
+            "value": "1401",
+            "name": "生活/家居"
+        },
+        {
+            "value": "1501",
+            "name": "生活/咨询服务"
+        },
+        {
+            "value": "1601",
+            "name": "数码"
+        },
+        {
+            "value": "1701",
+            "name": "票务/旅游"
+        },
+        {
+            "value": "1801",
+            "name": "网络虚拟服务"
+        },
+        {
+            "value": "1901",
+            "name": "教育/培训"
+        },
+        {
+            "value": "2001",
+            "name": "娱乐/健身服务"
+        },
+        {
+            "value": "2101",
+            "name": "医疗"
+        },
+        {
+            "value": "2201",
+            "name": "票务"
+        },
+        {
+            "value": "2301",
+            "name": "书籍/音像/文具"
+        },
+        {
+            "value": "2401",
+            "name": "房地产"
+        },
+        {
+            "value": "2501",
+            "name": "交通运输服务"
+        },
+        {
+            "value": "2601",
+            "name": "生活缴费"
+        },
+        {
+            "value": "2701",
+            "name": "保险"
+        },
+        {
+            "value": "2801",
+            "name": "通信"
+        },
+        {
+            "value": "2901",
+            "name": "金融"
+        },
+        {
+            "value": "3001",
+            "name": "彩票"
+        },
+        {
+            "value": "3101",
+            "name": "其他"
+        }
+    ],
+    "risk_item": [],
+    "rescind_info": [],
+    "ext_user_id": [],
+    "license_type": [
+        {
+            "value": "01",
+            "name": "普通营业执照",
+            "label": "普通营业执照"
+        },
+        {
+            "value": "03",
+            "name": "多证合一营业执照",
+            "label": "多证合一营业执照"
+        }
+    ],
+    "photo_type": [
+        {
+            "value": "01",
+            "name": "身份证正面"
+        },
+        {
+            "value": "02",
+            "name": "身份证反面"
+        },
+        {
+            "value": "03",
+            "name": "营业执照"
+        },
+        {
+            "value": "04",
+            "name": "组织机构代码证"
+        },
+        {
+            "value": "05",
+            "name": "开户银行证明照片"
+        }
+    ],
+    "bkc_use_type": [
+        {
+            "value": "01",
+            "name": "提现卡"
+        },
+        {
+            "value": "02",
+            "name": "快捷卡"
+        }
+    ],
+    "bind_status": [
+        {
+            "value": "01",
+            "name": "绑定"
+        },
+        {
+            "value": "02",
+            "name": "解绑"
+        },
+        {
+            "value": "03",
+            "name": "待认证"
+        }
+    ],
+    "bk_card_type": [
+        {
+            "value": "01",
+            "name": "储蓄卡"
+        },
+        {
+            "value": "02",
+            "name": "信用卡"
+        },
+        {
+            "value": "03",
+            "name": "其他卡"
+        }
+    ],
+    "id_card_status": [
+        {
+            "value": "01",
+            "name": "待审核",
+            "code": "Certification"
+        },
+        {
+            "value": "02",
+            "name": "已通过",
+            "code": "Certified"
+        },
+        {
+            "value": "03",
+            "name": "已驳回",
+            "code": "Dismissal"
+        },
+        {
+            "value": "04",
+            "name": "已过期",
+            "code": "Expire"
+        },
+        {
+            "value": "05",
+            "name": "未提交",
+            "code": "Uncommitted"
+        }
+    ],
+    "business_status": [
+        {
+            "value": "01",
+            "name": "待审核"
+        },
+        {
+            "value": "02",
+            "name": "已通过"
+        },
+        {
+            "value": "03",
+            "name": "已驳回"
+        },
+        {
+            "value": "04",
+            "name": "已过期"
+        }
+    ],
+    "auth_status": [
+        {
+            "value": "01",
+            "name": "正常"
+        },
+        {
+            "value": "02",
+            "name": "销户"
+        },
+        {
+            "value": "03",
+            "name": "风控冻结"
+        },
+        {
+            "value": "04",
+            "name": "实名待认证"
+        },
+        {
+            "value": "05",
+            "name": "实名已认证"
+        },
+        {
+            "value": "06",
+            "name": "实名认证过期"
+        },
+        {
+            "value": "07",
+            "name": "营业执照待认证"
+        },
+        {
+            "value": "08",
+            "name": "营业执照已认证"
+        },
+        {
+            "value": "09",
+            "name": "营业执照认证过期"
+        }
+    ],
+    "user_type": [
+        {
+            "value": "01",
+            "name": "个人"
+        },
+        {
+            "value": "02",
+            "name": "企业"
+        },
+        {
+            "value": "99",
+            "name": "其他"
+        }
+    ],
+    "is_flag": [
+        {
+            "value": "0",
+            "name": "是"
+        },
+        {
+            "value": "1",
+            "name": "否"
+        }
+    ],
+    "channel_code": [],
+    "bind_bkc_id": [],
+    "trx_pwd": [],
+    "fronturl": [],
+    "pay_method": [
+        {
+            "value": "01",
+            "name": "余额"
+        },
+        {
+            "value": "02",
+            "name": "网银支付"
+        },
+        {
+            "value": "03",
+            "name": "聚合支付"
+        },
+        {
+            "value": "04",
+            "name": "快捷支付"
+        },
+        {
+            "value": "99",
+            "name": "其他"
+        }
+    ],
+    "bk_acc_type": [
+        {
+            "value": "01",
+            "name": "对私"
+        },
+        {
+            "value": "02",
+            "name": "对公"
+        },
+        {
+            "value": "03",
+            "name": "贷记卡"
+        }
+    ],
+    "sms_code": [],
+    "enterprise_code": [],
+    "refund_amount": [],
+    "pay_count": [],
+    "share_info": [],
+    "bill_sub_type": [
+        {
+            "value": "01",
+            "name": "普通订单"
+        },
+        {
+            "value": "02",
+            "name": "分账订单"
+        }
+    ],
+    "check_status": [
+        {
+            "value": "1",
+            "name": "待审核"
+        },
+        {
+            "value": "2",
+            "name": "审核通过"
+        },
+        {
+            "value": "3",
+            "name": "审核未通过"
+        }
+    ],
+    "begin_date": [],
+    "end_date": [],
+    "page_size": [],
+    "page_index": [],
+    "status": [
+        {
+            "value": "01",
+            "name": "正常"
+        },
+        {
+            "value": "02",
+            "name": "维护中"
+        },
+        {
+            "value": "03",
+            "name": "不可用"
+        },
+        {
+            "value": "99",
+            "name": "余额不足"
+        }
+    ],
+    "share_status": [
+        {
+            "value": "03",
+            "name": "待分账"
+        },
+        {
+            "value": "02",
+            "name": "处理中"
+        },
+        {
+            "value": "00",
+            "name": "成功"
+        },
+        {
+            "value": "01",
+            "name": "失败"
+        }
+    ]
+}

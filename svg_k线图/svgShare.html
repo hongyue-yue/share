@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>svg</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.js"></script>
+    <style type="text/css">
+         .chart{
+             width:600px;
+             height:600px;
+             margin:0 auto;
+             border:1px solid #ccc;
+             box-sizing: border-box
+         }
+    </style>
+</head>
+<body>
+    <div class="chart">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="chart" width="100%" height="100%" >
+                <!--坐标轴-->
+                <g></g>
+                <!--x轴-->
+                <g></g>
+                <!--y轴-->
+                <g></g>
+                <!--x轴text-->
+                <g></g>
+                <!--y轴text-->
+                <g></g>
+                <!--图形-->
+                <g></g>
+                <!--K线图形-->
+        </svg>
+    </div>
+<script>
+  var arr=[{
+      time:"2019-03-05",
+      data:10
+  },
+  {
+      time:"2019-03-06",
+      data:5
+  },
+  {
+      time:"2019-03-07",
+      data:30
+  },
+  {
+      time:"2019-03-08",
+      data:40
+  },
+  {
+      time:"2019-03-09",
+      data:60
+  }]
+  var kArr=[
+    {
+      time:"2019-03-05",
+      openPrice:28,
+      closePrice:25,
+      highestPrice:30,
+      lowestPrice:24
+  },
+  {
+      time:"2019-03-06",
+      openPrice:18,
+      closePrice:16,
+      highestPrice:18,
+      lowestPrice:10
+  },
+  {
+      time:"2019-03-07",
+      openPrice:38,
+      closePrice:40,
+      highestPrice:45,
+      lowestPrice:34
+  },
+  {
+      time:"2019-03-08",
+      openPrice:26,
+      closePrice:22,
+      highestPrice:30,
+      lowestPrice:20
+  },{
+      time:"2019-03-09",
+      openPrice:46,
+      closePrice:50,
+      highestPrice:55,
+      lowestPrice:43
+  }]
+  function over(e){
+    console.log(e)
+  }
+  const chart = {
+  line(x1,y1,x2,y2,stroke,strokeWidth,dash){
+    x1 = x1 ? `x1="${x1}"` : 'x1=0';
+    y1 = y1 ? `y1="${y1}"` : 'y1=0';
+    x2 = x2 ? `x2="${x2}"` : 'x2=0';
+    y2 = y2 ? `y2="${y2}"` : 'y2=0';
+    stroke = stroke ? `stroke:${stroke};` : ''; 
+    strokeWidth = strokeWidth ? `stroke-width:${strokeWidth};` : '';
+    dash = dash ? `stroke-dasharray:${dash};` : '';
+    return `<line ${x1} ${y1} ${x2} ${y2} style="${stroke}${strokeWidth}${dash}"/>`;
+  },
+  rect(x,y,width,height,fill,stroke,strokeWidth,rx,ry,opacity){
+    x = x ? `x="${x}"` : 'x=0';
+    y = y ? `y="${y}"` : 'y=0';
+    rx = rx ? `rx="${rx}"` : '';
+    ry = ry ? `ry="${ry}"` : '';
+    width = width ? `width="${width}"` : '';
+    height = height ? `height="${height}"` : '';
+    fill = fill ? `fill:${fill};` : '';
+    stroke = stroke ? `stroke:${stroke};` : '';
+    opacity = opacity ? `opacity:${opacity};` : '';
+    strokeWidth = strokeWidth ? `stroke-width:${strokeWidth};` : '';
+    return `<rect ${x} ${y} ${rx} ${ry} ${width} ${height} style="${fill}${stroke}${strokeWidth}${opacity}"/>`
+  },
+  path(d,stroke,fill,fillOpacity){
+    d = d ? `d="${d}"` : 'd=0';
+    fill = fill ? `fill:${fill};` : '';
+    fillOpacity = fillOpacity ? `fill-opacity:${fillOpacity};` : '';
+    stroke = stroke ? `stroke:${stroke};` : '';
+    return `<path ${d}  style="${fill}${stroke}${fillOpacity} stroke-width:2"/>`;
+  },
+  circle(x,y,r,stroke,fill,opacity){
+    x = x ? `cx="${x}"` : 'x=0';
+    y = y ? `cy="${y}"` : 'y=0';
+    r = r ? `r="${r}"` : 'r=4';
+    stroke = stroke ? `stroke:${stroke};` : '';
+    fill = fill ? `fill:${fill};` : 'fill:transparent';
+    opacity = opacity ? `opacity:${opacity};` : '';
+    return `<circle ${x} ${y} ${r} style="${stroke}${fill}${opacity}" />`
+  },
+  text(x,y,content,fill,fontSize){
+    x = x ? `x="${x}"` : 'x=0';
+    y = y ? `y="${y}"` : 'y=0';
+    fill = fill ? `fill:${fill};` : '';
+    fontSize = fontSize ? `font-size:${fontSize};` : '';
+    if(content==undefined){
+      content = '111'
+    }
+    return `<text ${x} ${y} style="${fill} ${fontSize}">${content}</text>`;
+  }
+}
+const market ={
+    max:0,
+    min:0,
+    highestPrice:0,
+    lowestPrice:0,
+    //svg g分组
+    containerX:$('#chart>g:first-child'), //x轴
+    containerY:$('#chart>g:nth-child(2)'), //y轴
+    containerXT:$('#chart>g:nth-child(3)'), //x轴text
+    containerYT:$('#chart>g:nth-child(4)'), //y轴text
+    containerP:$('#chart>g:nth-child(5)'), //path图形
+    containerK:$('#chart>g:nth-child(6)'), //k线图形
+    svg:{
+      width:parseFloat($('#chart').css('width')),
+      height:parseFloat($('#chart').css('height')),
+      lxs:30,                 //左边距
+      lxe:60,                 //右边距
+      lys:20,                 //上边距
+      lye:40,                 //下边距
+      fx:0,                   //坐标内X分成几块
+      fy:5,                  //坐标内Y分成几块
+      oColor:'#3b3738',       //坐标系线颜色
+      pathColor:'#575757',    //分时图线颜色
+      textSize:12,           //x轴文字大小
+      textColor:'#000',      //y轴文字颜色
+      xDash:'2,2',            //竖线虚线
+      yDash:'2,2',            //横线虚线_
+      
+      rWidth:10,               //k线图方块宽度
+      lowColor:"#23BC01",      //k线图绿色 
+      heiColor:"#F11200"       //k线图红色
+    },
+    //坐标域
+  ox:{
+    start:0,
+    end:0
+  },
+  oy:{
+    start:0,
+    end:0
+  },
+  //坐标差值
+  odx:0,                  //x轴最左与最右值的实际差
+  ody:0,                  //y轴最上与最下值的实际差
+  _x:0,                   //每单位时间走过的X轴距离
+  init:function(){
+    this.intSvg()
+    this.drawO()
+    this.drowPath()
+    this.drowK()
+  },
+  intSvg:function(){
+      this.ox = {
+        start:this.svg.lxs,
+        end:this.svg.width - this.svg.lxe
+      }
+      this.oy = {
+        start:this.svg.lys,
+        end:this.svg.height - this.svg.lye
+      }
+      this.odx = this.ox.end - this.ox.start;
+      this.ody = this.oy.end - this.oy.start;
+      this.svg.fx=arr.length
+      this._x=this.odx/this.svg.fx
+  },
+  drawO:function(){
+    let fx = this.svg.fx,
+      fy = this.svg.fy,
+      color = this.svg.oColor,
+      ox = '',
+      oy = '';
+      for(let i = 0; i<=fx; i++){
+      let x1 = this.ox.start + i*this._x,
+        y1 = this.oy.start,
+        x2 = this.ox.start + i*this._x,
+        y2 = this.oy.end;
+        if(i==0){
+          ox += chart.line(x1,y1,x2,y2,color,2);
+        }else{
+          ox += chart.line(x1,y1,x2,y2,"#ccc",2,this.svg.xDash);
+        }
+       
+      }
+    this.containerX.html(ox);
+    for(let j = 0; j<=fy; j++){
+      let x1 = this.ox.start,
+        y1 = this.oy.start + j/fy*this.ody,
+        x2 = this.ox.end,
+        y2 = this.oy.start + j/fy*this.ody;
+        if(j==fy){
+          oy += chart.line(x1,y1,x2,y2,color,2);
+        }else{
+          oy += chart.line(x1,y1,x2,y2,"#ccc",2,this.svg.yDash);
+        }
+       
+    }
+    this.containerY.html(oy);
+    this.drowText()
+  },
+  drowText:function(){
+    let fx = this.svg.fx,
+        fy = this.svg.fy,
+        textColor=this.svg.textColor,
+        textSize=this.svg.textSize,
+        xText="",
+        yText=""
+    for(let i=1; i<=arr.length; i++){
+       let x = this.ox.start + i*this._x-31,
+           y = this.oy.end+20;
+       xText += chart.text(x,y,arr[i-1].time,textColor,textSize);
+    }
+    this.containerXT.html(xText)
+
+     this.max=arr.sort((a,b)=>{a.data-b.data})[arr.length-1].data
+    for(let j=0;j<=fy;j++){
+      let x = this.ox.start-15,
+          y = this.oy.end-j/fy*this.ody+5;
+          yText += chart.text(x,y,this.min+j*this.max/fy,textColor,textSize);
+    }
+    this.containerYT.html(yText)
+    
+  },
+  drowPath:function(){
+      let length=arr.length,
+          fx = this.svg.fx,
+          diff=this.max-this.min,
+          d="",
+          circle="";
+      for(let i=1;i<=length;i++){
+         let data=arr[i-1].data
+         if(i==1){
+           d+=`M${this.ox.start + i*this._x},${this.oy.end-(data-this.min)/diff*this.ody} `
+         }else{
+           d+=`L${this.ox.start + i*this._x},${this.oy.end-(data-this.min)/diff*this.ody} `
+         }
+         circle+=chart.circle(this.ox.start + i*this._x,this.oy.end-(data-this.min)/diff*this.ody,"","",this.svg.pathColor)
+      }
+      let path=chart.path(d,this.svg.pathColor,'transparent')
+      this.containerP.html(path+circle)
+  },
+  drowK:function(){
+     let length=kArr.length,
+         diff=this.max-this.min,
+         lowColor=this.svg.lowColor,
+         heiColor=this.svg.heiColor,
+         k="";
+     for(let i=1;i<=length;i++){
+        let openPrice=kArr[i-1].openPrice,
+            closePrice=kArr[i-1].closePrice,
+            highestPrice=kArr[i-1].highestPrice,
+            lowestPrice=kArr[i-1].lowestPrice;
+        let lx1=this.ox.start + i*this._x,
+            ly1=this.oy.end-(highestPrice-this.min)/diff*this.ody,
+            lx2=this.ox.start + i*this._x,
+            ly2=this.oy.end-(lowestPrice-this.min)/diff*this.ody;
+        k+=chart.line(lx1,ly1,lx2,ly2,openPrice>closePrice?lowColor:heiColor,2)
+       
+        let rx1= this.ox.start + i*this._x-this.svg.rWidth/2,
+            ry1=openPrice>=closePrice?this.oy.end-(openPrice-this.min)/diff*this.ody:this.oy.end-(closePrice-this.min)/diff*this.ody,
+            height=openPrice>closePrice?(openPrice-closePrice)/diff*this.ody:(closePrice-openPrice)/diff*this.ody;
+            height=openPrice==closePrice?1:height
+        k+=chart.rect(rx1,ry1,this.svg.rWidth,height,openPrice>closePrice?lowColor:heiColor)
+
+     }
+     this.containerK.html(k)
+  }
+}
+market.init()
+</script>
+</body>
+</html>
