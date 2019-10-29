@@ -23,7 +23,7 @@ class MyRedux{
         }
     }
     dispatch=(newState,type)=>{
-      Object.keys(this.reducer).map(v=>{
+      Object.keys(this.reducer).forEach(v=>{
         this.state[v]=this.reducer[v](this.state[v],{newState,type})
       })
       if (this.listenerArr.length > 0) {

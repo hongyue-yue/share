@@ -38,13 +38,13 @@ console.log(store.getState())*/
     };
     let init=()=>{
       let keyArr=Object.keys(reducers)
-      keyArr.map(key=>{
+      keyArr.forEach(key=>{
           state[key]=reducers[key]()
       })
     }
     let dispatch = (action) => {
         let keyArr=Object.keys(reducers)
-        keyArr.map(key=>{
+        keyArr.forEach(key=>{
           state[key]=reducers[key](state[key], action)
         })
         listeners.forEach(listener => listener());
