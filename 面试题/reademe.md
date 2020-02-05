@@ -60,18 +60,17 @@
 
     [Styled Components](http://www.alloyteam.com/2017/05/guide-styled-components/)
 
-5. 什么是DOCTYPE及作用？常见的doctype有哪些？
-   
-    用来声明文档类型和DTD规范的。
+5.  什么是 DOCTYPE 及作用？常见的 doctype 有哪些？
 
-    DTD（document type definition）文档类型定义，是一系列的语法规则，用来声明XML或(X)HTML的文件类型，浏览器会使用它来决定文档类型，决定使用何种协议来解析，以及切换浏览器模式。
+    用来声明文档类型和 DTD 规范的。
 
-    常见的doctype:
-    
+    DTD（document type definition）文档类型定义，是一系列的语法规则，用来声明 XML 或(X)HTML 的文件类型，浏览器会使用它来决定文档类型，决定使用何种协议来解析，以及切换浏览器模式。
+
+    常见的 doctype:
+
     - HTML5\<!DOCTYPE html>
     - HTML4.01 Strict 严格模式 （不包含展示性或弃用的元素）
     - HTML4.01 Transitional 传统(宽松)模式（包含展示性或弃用的元素）
-   
 
 ## js 篇
 
@@ -212,6 +211,7 @@
    [js 中箭头函数和普通函数的区别](https://segmentfault.com/a/1190000018902542)
 
 6. js 常见兼容问题
+
    - e 事件对象的兼容
      ```
      var e = e || window.event
@@ -236,242 +236,263 @@
      attachEvent() 不再被IE11支持。
      EventTarget.addEventListener()被IE9+支持
      ```
-    [js常见兼容问题](https://www.jianshu.com/p/0137498286e3)
+     [js 常见兼容问题](https://www.jianshu.com/p/0137498286e3)
 
 7. 判断变量的类型方法有哪些？
 
-  - typeof 操作符返回一个字符串，表示未经计算的操作数的类型
+- typeof 操作符返回一个字符串，表示未经计算的操作数的类型
 
-     typeof判断数据类型:
-     ![](./typeof.PNG)
-   
-  - instanceof 运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上
+  typeof 判断数据类型:
+  ![](./typeof.PNG)
 
-   语法 ：
+- instanceof 运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上
 
-   ```
-     object instanceof constructor
+语法 ：
 
-     object 某个实例对象
-     constructor 某个构造函数
-   ```
+```
+  object instanceof constructor
+
+  object 某个实例对象
+  constructor 某个构造函数
+```
+
 8. js 值比较方法
 
-   - 严格相等 ("triple equals" 或 "identity")，使用 === 
+   - 严格相等 ("triple equals" 或 "identity")，使用 ===
    - 宽松相等 ("double equals") ，使用 ==
    - 以及 Object.is （ECMAScript 2015/ ES6 新特性）
 
    非严格比较值转换方式
    ![](./==与===.PNG)
 
-9. js原型链链式的指向问题
-   
+9. js 原型链链式的指向问题
+
    constructor 指向构造函数
 
-   \__proto__ 指向实例的原型
+   \_\_proto\_\_ 指向实例的原型
 
-## React篇
-   [2019年17道高频React面试题及详解](https://juejin.im/post/5d5f44dae51d4561df7805b4)
+10. js 常见内存泄漏
 
-   1. react生命周期
+    - 意外的全局变量
+    - 被遗忘的计时器或回调函数
+    - 脱离 DOM 的引用
+    - 闭包
 
-      react15生命周期
-       ![](./reactOld.PNG)
-      
-      React 16之后有三个生命周期被废弃(但并未删除)
-      - componentWillMount
-      - componentWillReceiveProps
-      - componentWillUpdate
+    [js 常见的内存泄漏](https://www.cnblogs.com/cwxwdm/p/10845376.html)
 
-      新增一个生命周期：getDerivedStateFromProps
+## React 篇
 
-      react16生命周期
-       ![](./reactNew.PNG)
-    
-   2. react16新增了哪些东西？
-      - render 支持返回数组和字符串
-      - 新生命周期getDerivedStateFromProps，getSnapshotBeforeUpate
-      - createPortal，modal传送到任意位置
-      - 新增指针事件
-      - 给函数式组件加memo，实现性能优化
-      - 懒加载组件，lazy, suspense
-      - react hooks
+[2019 年 17 道高频 React 面试题及详解](https://juejin.im/post/5d5f44dae51d4561df7805b4)
 
-      [react16新特性](https://www.jianshu.com/p/24ed0bc34c12?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation)
-    
+1.  react 生命周期
 
-   3. React.Component和React.PureComponent区别
-       - 继承PureComponent时，不能再重写shouldComponentUpdate
-       - React.PureComponent基于shouldComponentUpdate做了一些优化，通过prop和state的浅比较来实现shouldComponentUpdate，也就是说，如果是引用类型的数据，只会比较是不是同一个地址，而不会比较具体这个地址存的数据是否完全一致。
+    react15 生命周期
+    ![](./reactOld.PNG)
 
-   4. react函数组件和类组件
+    React 16 之后有三个生命周期被废弃(但并未删除)
 
-       [react-函数组件和类组件的区别](https://segmentfault.com/a/1190000020861150)
-   
-   5. react函数组件
+    - componentWillMount
+    - componentWillReceiveProps
+    - componentWillUpdate
 
-      [精读《Function Component 入门》](https://segmentfault.com/a/1190000019300727)
+    新增一个生命周期：getDerivedStateFromProps
 
-   6. react中为何要绑定this
-      
-      react组件实例化后，render方法中的JSX中的this并不指向自身，此时this指向事件响应时的上下文环境，并不是组件实例
+    react16 生命周期
+    ![](./reactNew.PNG)
 
-      react中绑定this的几种方法
-      - bind方法
-      - 组件类中使用箭头函数方法
-      - jsx语法中使用箭头函数
-       ```
-         onClick={()=>{this.cb()}}
-       ``` 
+2.  react16 新增了哪些东西？
 
-      [React中为什么要绑定this](https://oychao.github.io/2017/07/14/react/14_this/)
+    - render 支持返回数组和字符串
+    - 新生命周期 getDerivedStateFromProps，getSnapshotBeforeUpate
+    - createPortal，modal 传送到任意位置
+    - 新增指针事件
+    - 给函数式组件加 memo，实现性能优化
+    - 懒加载组件，lazy, suspense
+    - react hooks
 
-   7. setState的同步和异步问题
+    [react16 新特性](https://www.jianshu.com/p/24ed0bc34c12?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation)
 
-       在react中由react引发的React引发的事件处理（比如通过onClick引发的合成事件处理）和组件生命周期函数内（比如componentDidMount）调用setState为异步执行
-       在js原生异步函数中(如setTimeout)调用setState为同步执行
+3)  React.Component 和 React.PureComponent 区别
 
-       [浅入深出setState（上篇）](https://segmentfault.com/a/1190000015615057)
+    - 继承 PureComponent 时，不能再重写 shouldComponentUpdate
+    - React.PureComponent 基于 shouldComponentUpdate 做了一些优化，通过 prop 和 state 的浅比较来实现 shouldComponentUpdate，也就是说，如果是引用类型的数据，只会比较是不是同一个地址，而不会比较具体这个地址存的数据是否完全一致。
 
-       [浅入深出setState（下篇）](https://segmentfault.com/a/1190000015821018)
+4)  react 函数组件和类组件
 
-   8. React合成事件
+    [react-函数组件和类组件的区别](https://segmentfault.com/a/1190000020861150)
 
-      [React合成事件文档](https://zh-hans.reactjs.org/docs/events.html)
-      
-      [React合成事件和DOM原生事件混用须知](https://juejin.im/post/59db6e7af265da431f4a02ef)
-   
-   9. react Fiber架构
-      
-      [React Fiber 原理介绍](https://segmentfault.com/a/1190000018250127)
+5)  react 函数组件
 
-# vue篇
-   [vue面试知识点](https://segmentfault.com/a/1190000020181662?utm_source=tag-newest)
+    [精读《Function Component 入门》](https://segmentfault.com/a/1190000019300727)
 
-   1. vue生命周期
+6)  react 中为何要绑定 this
 
-      - beforeCreate（创建前） 在数据观测和初始化事件还未开始
-      - created（创建后） 完成数据观测，属性和方法的运算，初始化事件，$el属性还没有显示出来
-      - beforeMount（载入前） 在挂载开始之前被调用，相关的render函数首次被调用。实例已完成以下的配置：编译模板，把data里面的数据和模板生成html。注意此时还没有挂载html到页面上。
-      - mounted（载入后） 在el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用。实例已完成以下的配置：用上面编译好的html内容替换el属性指向的DOM对象。完成模板中的html渲染到html页面中。此过程中进行ajax交互。
-      - beforeUpdate（更新前） 在数据更新之前调用，发生在虚拟DOM重新渲染和打补丁之前。可以在该钩子中进一步地更改状态，不会触发附加的重渲染过程。
-      - updated（更新后） 在由于数据更改导致的虚拟DOM重新渲染和打补丁之后调用。调用时，组件DOM已经更新，所以可以执行依赖于DOM的操作。然而在大多数情况下，应该避免在此期间更改状态，因为这可能会导致更新无限循环。该钩子在服务器端渲染期间不被调用。
-      - beforeDestroy（销毁前） 在实例销毁之前调用。实例仍然完全可用。
-      - destroyed（销毁后） 在实例销毁之后调用。调用后，所有的事件监听器会被移除，所有的子实例也会被销毁。该钩子在服务器端渲染期间不被调用
+    react 组件实例化后，render 方法中的 JSX 中的 this 并不指向自身，此时 this 指向事件响应时的上下文环境，并不是组件实例
 
-   ![](./vue.PNG)
+    react 中绑定 this 的几种方法
 
-   2. vue keep-alive的使用及实现原理
+    - bind 方法
+    - 组件类中使用箭头函数方法
+    - jsx 语法中使用箭头函数
 
-       [聊聊keep-alive组件的使用及其实现原理](https://segmentfault.com/a/1190000011978825)
+    ```
+      onClick={()=>{this.cb()}}
+    ```
 
-       [React 中的状态自动保存（KeepAlive）](https://juejin.im/post/5d7edee9f265da03a9506701)
+    [React 中为什么要绑定 this](https://oychao.github.io/2017/07/14/react/14_this/)
 
-       [React 怎么实现 Vue 的 <keep-alive> 组件](https://juejin.im/post/5c8f6635f265da612254a9cd)
-    
-   3. vue的双向绑定原理及其实现
-        
-        [vue 的双向绑定原理及实现](https://juejin.im/entry/5923973da22b9d005893805a)
+7)  setState 的同步和异步问题
+
+    在 react 中由 react 引发的 React 引发的事件处理（比如通过 onClick 引发的合成事件处理）和组件生命周期函数内（比如 componentDidMount）调用 setState 为异步执行
+    在 js 原生异步函数中(如 setTimeout)调用 setState 为同步执行
+
+    [浅入深出 setState（上篇）](https://segmentfault.com/a/1190000015615057)
+
+    [浅入深出 setState（下篇）](https://segmentfault.com/a/1190000015821018)
+
+8)  React 合成事件
+
+    [React 合成事件文档](https://zh-hans.reactjs.org/docs/events.html)
+
+    [React 合成事件和 DOM 原生事件混用须知](https://juejin.im/post/59db6e7af265da431f4a02ef)
+
+9)  react Fiber 架构
+
+    [React Fiber 原理介绍](https://segmentfault.com/a/1190000018250127)
+
+# vue 篇
+
+[vue 面试知识点](https://segmentfault.com/a/1190000020181662?utm_source=tag-newest)
+
+1.  vue 生命周期
+
+    - beforeCreate（创建前） 在数据观测和初始化事件还未开始
+    - created（创建后） 完成数据观测，属性和方法的运算，初始化事件，\$el 属性还没有显示出来
+    - beforeMount（载入前） 在挂载开始之前被调用，相关的 render 函数首次被调用。实例已完成以下的配置：编译模板，把 data 里面的数据和模板生成 html。注意此时还没有挂载 html 到页面上。
+    - mounted（载入后） 在 el 被新创建的 vm.\$el 替换，并挂载到实例上去之后调用。实例已完成以下的配置：用上面编译好的 html 内容替换 el 属性指向的 DOM 对象。完成模板中的 html 渲染到 html 页面中。此过程中进行 ajax 交互。
+    - beforeUpdate（更新前） 在数据更新之前调用，发生在虚拟 DOM 重新渲染和打补丁之前。可以在该钩子中进一步地更改状态，不会触发附加的重渲染过程。
+    - updated（更新后） 在由于数据更改导致的虚拟 DOM 重新渲染和打补丁之后调用。调用时，组件 DOM 已经更新，所以可以执行依赖于 DOM 的操作。然而在大多数情况下，应该避免在此期间更改状态，因为这可能会导致更新无限循环。该钩子在服务器端渲染期间不被调用。
+    - beforeDestroy（销毁前） 在实例销毁之前调用。实例仍然完全可用。
+    - destroyed（销毁后） 在实例销毁之后调用。调用后，所有的事件监听器会被移除，所有的子实例也会被销毁。该钩子在服务器端渲染期间不被调用
+
+![](./vue.PNG)
+
+2.  vue keep-alive 的使用及实现原理
+
+    [聊聊 keep-alive 组件的使用及其实现原理](https://segmentfault.com/a/1190000011978825)
+
+    [React 中的状态自动保存（KeepAlive）](https://juejin.im/post/5d7edee9f265da03a9506701)
+
+    [React 怎么实现 Vue 的 <keep-alive> 组件](https://juejin.im/post/5c8f6635f265da612254a9cd)
+
+3.  vue 的双向绑定原理及其实现
+    [vue 的双向绑定原理及实现](https://juejin.im/entry/5923973da22b9d005893805a)
 
 # webpack 篇
 
-   [前端面试之webpack面试常见问题](https://www.jianshu.com/p/06c6614001be?utm_source=oschina-app)
+[前端面试之 webpack 面试常见问题](https://www.jianshu.com/p/06c6614001be?utm_source=oschina-app)
 
-   1. webpack热跟新原理
+1.  webpack 热跟新原理
 
-       [Webpack 热更新实现原理分析](https://www.jianshu.com/p/652fbae768bf)
-    
-   2. webpack loader和plugin
-      
-      loader 是转译模块源代码的转换规则。 loader 被编写为，接受源代码作为参数的函数， 并返回这些转换过的新版本代码
-      plugin接口可以帮助用户直接触及到编译过程(compilation process)。 插件可以将处理函数(handler)注册到编译过程中的不同事件点上运行的生命周期钩子函数上。 当执行每个钩子时， 插件能够完全访问到编译(compilation)的当前状态。
+    [Webpack 热更新实现原理分析](https://www.jianshu.com/p/652fbae768bf)
 
-      [webpack 编写loader文档](https://webpack.js.org/contribute/writing-a-loader/)
+2.  webpack loader 和 plugin
 
-      [webpack 编写plugin文档](https://webpack.js.org/contribute/writing-a-plugin/)
+    loader 是转译模块源代码的转换规则。 loader 被编写为，接受源代码作为参数的函数， 并返回这些转换过的新版本代码
+    plugin 接口可以帮助用户直接触及到编译过程(compilation process)。 插件可以将处理函数(handler)注册到编译过程中的不同事件点上运行的生命周期钩子函数上。 当执行每个钩子时， 插件能够完全访问到编译(compilation)的当前状态。
 
-   3. 精简moment的plugin配置
-      - 使用ContextReplacementPlugin
-      ```
-       new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-cn/)
-      ```
-      - 使用IgnorePlugin
-      ```
-        new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-      ```
+    [webpack 编写 loader 文档](https://webpack.js.org/contribute/writing-a-loader/)
 
-      [如何用webpack优化moment.js的体积](https://juejin.im/post/5de4fe59f265da05b52e893b)
+    [webpack 编写 plugin 文档](https://webpack.js.org/contribute/writing-a-plugin/)
 
-# http篇
+3.  精简 moment 的 plugin 配置
 
-   [前端面试整理 -- HTTP篇](https://zhuanlan.zhihu.com/p/83624993)
+    - 使用 ContextReplacementPlugin
 
-   [HTTP和Ajax面试题](https://www.jianshu.com/p/44b3f37eb2e7)
+    ```
+     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /zh-cn/)
+    ```
 
-   [HTTP与HTTPS](https://juejin.im/post/5c6e5803f265da2dc0065437)
+    - 使用 IgnorePlugin
 
-   1. http2.0相较于http1.1版本有哪些改进
-      
-      [HTTP2 详解](https://www.jianshu.com/p/e57ca4fec26f)
+    ```
+      new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    ```
 
-      - http2.0实现了单连接上多请求 - 响应并行，解决了线头阻塞的问题，减少了 TCP 连接数量和 TCP 连接慢启动造成的问题（http1.1在每个 TCP 连接同时只能处理一个请求 - 响应，为串行）
-      - http2.0可进行服务端推送
+    [如何用 webpack 优化 moment.js 的体积](https://juejin.im/post/5de4fe59f265da05b52e893b)
 
-  2. http缓存，强缓存和协商缓存
+# http 篇
 
-     [强制缓存和协商缓存](https://juejin.im/post/5ccfccaff265da03ab233bf5)
-     
-  3. get请求和post请求区别
+[前端面试整理 -- HTTP 篇](https://zhuanlan.zhihu.com/p/83624993)
 
-     - POST对请求参数的长度没有限制，而GET如果请求参数过长，会被浏览器截断
-     - GET请求参数会直接暴露在URL上，所以不适合用来传递敏感信息。
-     - GET请求可以被浏览器主动缓存，而POST请求不可以，除非手动设置。
-     - GET请求在浏览器回退时是无害的，而POST会再次提交请求。
-     - GET请求产生的URL可以被浏览器缓存，而POST不可以。
-     - Get请求具有幂等性，POST请求不是(最重要一点)
+[HTTP 和 Ajax 面试题](https://www.jianshu.com/p/44b3f37eb2e7)
 
-      [GET 和 POST 区别](https://juejin.im/entry/597ca6caf265da3e301e64db)
- 
-  4. websocket
-     - websocket共有四次握手(tcp三次，websocket一次)
-     - webSocket支持文本和二进制数据传输
+[HTTP 与 HTTPS](https://juejin.im/post/5c6e5803f265da2dc0065437)
 
-     [WebSocket 浅析](https://www.jianshu.com/p/bc7d1a260c0c)
+1. http2.0 相较于 http1.1 版本有哪些改进
 
-  5. 跨域
-     - jsonp([JSONP跨域详解](https://www.jianshu.com/p/e1e2920dac95))
-     - [CROS跨域](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)(简单请求和复杂请求)
-     - 代理
-          
+   [HTTP2 详解](https://www.jianshu.com/p/e57ca4fec26f)
+
+   - http2.0 实现了单连接上多请求 - 响应并行，解决了线头阻塞的问题，减少了 TCP 连接数量和 TCP 连接慢启动造成的问题（http1.1 在每个 TCP 连接同时只能处理一个请求 - 响应，为串行）
+   - http2.0 可进行服务端推送
+
+2. http 缓存，强缓存和协商缓存
+
+   [强制缓存和协商缓存](https://juejin.im/post/5ccfccaff265da03ab233bf5)
+
+3. get 请求和 post 请求区别
+
+   - POST 对请求参数的长度没有限制，而 GET 如果请求参数过长，会被浏览器截断
+   - GET 请求参数会直接暴露在 URL 上，所以不适合用来传递敏感信息。
+   - GET 请求可以被浏览器主动缓存，而 POST 请求不可以，除非手动设置。
+   - GET 请求在浏览器回退时是无害的，而 POST 会再次提交请求。
+   - GET 请求产生的 URL 可以被浏览器缓存，而 POST 不可以。
+   - Get 请求具有幂等性，POST 请求不是(最重要一点)
+
+   [GET 和 POST 区别](https://juejin.im/entry/597ca6caf265da3e301e64db)
+
+4. websocket
+
+   - websocket 共有四次握手(tcp 三次，websocket 一次)
+   - webSocket 支持文本和二进制数据传输
+
+   [WebSocket 浅析](https://www.jianshu.com/p/bc7d1a260c0c)
+
+5. 跨域
+   - jsonp([JSONP 跨域详解](https://www.jianshu.com/p/e1e2920dac95))
+   - [CROS 跨域](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS)(简单请求和复杂请求)
+   - 代理
+
 # 其他
 
-  1. 安全类
-     - CSRF，跨站请求伪造（Cross-site request forgery）
+1. 安全类
 
-       防御措施：
+   - CSRF，跨站请求伪造（Cross-site request forgery）
 
-         Token验证（请求必须携带Token）
+     防御措施：
 
-         Referer 验证（验证请求的来源是否可信）
-        
-        [前端安全系列之二：如何防止CSRF攻击？](https://juejin.im/post/5bc009996fb9a05d0a055192)
+     Token 验证（请求必须携带 Token）
 
-     - XSS（cross-site scripting 跨站脚本攻击）
+     Referer 验证（验证请求的来源是否可信）
 
-       原理：注入脚本
+     [前端安全系列之二：如何防止 CSRF 攻击？](https://juejin.im/post/5bc009996fb9a05d0a055192)
 
-       防御措施：对用户的输入做验证    
+   - XSS（cross-site scripting 跨站脚本攻击）
 
-       [前端安全系列（一）：如何防止XSS攻击？](https://tech.meituan.com/2018/09/27/fe-security.html)
+     原理：注入脚本
 
-   2. 首屏加载速度优化
-      
-      [参考资料](https://zhuanlan.zhihu.com/p/56121620)
-    
-   3. 前端性能优化
-      
-      [2019年前端性能优化清单 — 上篇](https://juejin.im/post/5c46cbaee51d453f45612a2c)
+     防御措施：对用户的输入做验证
 
-      [2019年前端性能优化清单 — 中篇](https://juejin.im/post/5c471eaff265da616d547c8c)
+     [前端安全系列（一）：如何防止 XSS 攻击？](https://tech.meituan.com/2018/09/27/fe-security.html)
 
-      [2019年前端性能优化清单 — 下篇](https://juejin.im/post/5c473cdae51d45518d4701ff)
+2. 首屏加载速度优化
+
+   [参考资料](https://zhuanlan.zhihu.com/p/56121620)
+
+3. 前端性能优化
+
+   [2019 年前端性能优化清单 — 上篇](https://juejin.im/post/5c46cbaee51d453f45612a2c)
+
+   [2019 年前端性能优化清单 — 中篇](https://juejin.im/post/5c471eaff265da616d547c8c)
+
+   [2019 年前端性能优化清单 — 下篇](https://juejin.im/post/5c473cdae51d45518d4701ff)
