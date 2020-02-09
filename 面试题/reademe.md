@@ -280,6 +280,22 @@
 
     [js 常见的内存泄漏](https://www.cnblogs.com/cwxwdm/p/10845376.html)
 
+11. new 操作符执行了哪些操作
+
+    1. 创建一个新对象；
+    2. 将构造函数的作用域赋给新对象（因此 this 就指向了这个新对象）；
+    3. 执行构造函数中的代码（为这个新对象添加属性）；
+    4. 返回新对象；
+
+    ```
+    function new(Con,...arg){
+      let obj={}
+      Object.setPrototypeOf(obj,Con.prototype)
+      let result=Con.apply(obj,arg)
+      return result instanceof Object?result:obj
+    }
+    ```
+
 ## React 篇
 
 [2019 年 17 道高频 React 面试题及详解](https://juejin.im/post/5d5f44dae51d4561df7805b4)
