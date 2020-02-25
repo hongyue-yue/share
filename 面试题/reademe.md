@@ -296,6 +296,14 @@
     }
     ```
 
+12. require 与 import 的区别
+
+    require 属于 CommonJS 模块化规范，运行时调用
+
+    import 属于 es6 语法规范，编译时调用
+
+    [require 与 import 的区别](https://juejin.im/post/5c46b6b76fb9a04a09565e86)
+
 ## React 篇
 
 [2019 年 17 道高频 React 面试题及详解](https://juejin.im/post/5d5f44dae51d4561df7805b4)
