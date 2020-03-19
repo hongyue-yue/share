@@ -304,6 +304,10 @@
 
     [require 与 import 的区别](https://juejin.im/post/5c46b6b76fb9a04a09565e86)
 
+13. 浏览器环境与 node 环境事件循环的区别
+    [node 环境的事件循环](https://zhuanlan.zhihu.com/p/37427130)
+    [浏览器与 Node 的事件循环(Event Loop)有何区别](https://www.jianshu.com/p/5f1a8f586019)
+
 ## React 篇
 
 [2019 年 17 道高频 React 面试题及详解](https://juejin.im/post/5d5f44dae51d4561df7805b4)
