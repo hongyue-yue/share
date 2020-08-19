@@ -426,6 +426,10 @@
 
 [前端面试之 webpack 面试常见问题](https://www.jianshu.com/p/f1b88a05d774)
 
+[webpack编译流程](https://juejin.im/post/6844903935828819981)
+
+[深入浅出webpack](https://webpack.wuhaolin.cn/)
+
 1.  webpack 热跟新原理
 
     [Webpack 热更新实现原理分析](https://www.jianshu.com/p/652fbae768bf)
