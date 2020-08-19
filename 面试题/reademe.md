@@ -424,7 +424,7 @@
 
 # webpack 篇
 
-[前端面试之 webpack 面试常见问题](https://www.jianshu.com/p/06c6614001be?utm_source=oschina-app)
+[前端面试之 webpack 面试常见问题](https://www.jianshu.com/p/f1b88a05d774)
 
 1.  webpack 热跟新原理
 
