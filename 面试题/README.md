@@ -74,7 +74,13 @@
 
 ## js 篇
 
-1. var、let 与 const 的区别
+1. js 数据类型
+
+   基本数据类型：Number、String、Boolean、Null、Undefined
+
+   混合数据类型：Object
+
+2. var、let 与 const 的区别
 
    - var 存在变量提升，let 没有
    - let 存在块级作用域，var 没有
@@ -100,7 +106,7 @@
 
    [Javascript 变量生命周期](https://juejin.im/post/5d2fb820e51d454f723025bb)
 
-2. promise 执行顺序
+3. promise 执行顺序
 
    ```
    console.log(1)
@@ -131,7 +137,7 @@
 
    [参考资料](https://juejin.im/post/5b498d245188251b193d4059)
 
-3. 防抖(debounce)与节流(throttle)
+4. 防抖(debounce)与节流(throttle)
 
    - 防抖：如果用户多次调用且间隔小于 wait 值，那么就会被转化为一次调用。
    - 节流：多次执行函数转化为，每隔一定时间（wait）调用函数 。
@@ -172,7 +178,7 @@
    }
    ```
 
-4. call、apply 和 bind
+5. call、apply 和 bind
 
    自定义 call、apply 和 bind 见[2019 秋招知识盲点总结](https://segmentfault.com/a/1190000016329715?utm_source=tag-newest#item-6)
 
@@ -195,7 +201,7 @@
      d(4) //4
    ```
 
-5. 箭头函数与普通函数的区别
+6. 箭头函数与普通函数的区别
 
    - 函数体内的 this 对象，就是定义时所在的对象，而不是使用时所在的对象。
    - 不可以当作构造函数，也就是说，不可以使用 new 命令，否则会抛出一个错误。
@@ -210,7 +216,7 @@
 
    [js 中箭头函数和普通函数的区别](https://segmentfault.com/a/1190000018902542)
 
-6. js 常见兼容问题
+7. js 常见兼容问题
 
    - e 事件对象的兼容
      ```
@@ -238,13 +244,13 @@
      ```
      [js 常见兼容问题](https://www.jianshu.com/p/0137498286e3)
 
-7. 判断变量的类型方法有哪些？
+8. 判断变量的类型方法有哪些？
 
 - typeof 操作符返回一个字符串，表示未经计算的操作数的类型
 
   typeof 判断数据类型:
 
-  ![](./typeof.PNG)
+  ![](./img/typeof.PNG)
 
 - instanceof 运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上
 
@@ -257,7 +263,7 @@
   constructor 某个构造函数
 ```
 
-8. js 值比较方法
+9. js 值比较方法
 
    - 严格相等 ("triple equals" 或 "identity")，使用 ===
    - 宽松相等 ("double equals") ，使用 ==
@@ -265,15 +271,15 @@
 
    非严格比较值转换方式
 
-   ![](./==与===.PNG)
+   ![](./img/==与===.PNG)
 
-9. js 原型链链式的指向问题
+10. js 原型链链式的指向问题
 
    constructor 指向构造函数
 
    \_\_proto\_\_ 指向实例的原型
 
-10. js 常见内存泄漏
+11. js 常见内存泄漏
 
     - 意外的全局变量
     - 被遗忘的计时器或回调函数
@@ -282,7 +288,7 @@
 
     [js 常见的内存泄漏](https://www.cnblogs.com/cwxwdm/p/10845376.html)
 
-11. new 操作符执行了哪些操作
+12. new 操作符执行了哪些操作
 
     1. 创建一个新对象；
     2. 将构造函数的作用域赋给新对象（因此 this 就指向了这个新对象）；
@@ -298,7 +304,7 @@
     }
     ```
 
-12. require 与 import 的区别
+13. require 与 import 的区别
 
     require 属于 CommonJS 模块化规范，运行时调用
 
@@ -306,7 +312,7 @@
 
     [require 与 import 的区别](https://juejin.im/post/5c46b6b76fb9a04a09565e86)
 
-13. 浏览器环境与 node 环境事件循环的区别
+14. 浏览器环境与 node 环境事件循环的区别
 
     [node 环境的事件循环](https://zhuanlan.zhihu.com/p/37427130)
 
@@ -332,7 +338,7 @@
 
     react16 生命周期
 
-    ![](./reactNew.PNG)
+    ![](./img/reactNew.PNG)
 
 2.  react16 新增了哪些东西？
 
@@ -409,7 +415,7 @@
     - beforeDestroy（销毁前） 在实例销毁之前调用。实例仍然完全可用。
     - destroyed（销毁后） 在实例销毁之后调用。调用后，所有的事件监听器会被移除，所有的子实例也会被销毁。该钩子在服务器端渲染期间不被调用
 
-    ![](./vue.PNG)
+    ![](./img/vue.PNG)
 
 2.  vue keep-alive 的使用及实现原理
 
