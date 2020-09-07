@@ -250,7 +250,7 @@
 
   typeof 判断数据类型:
 
-  ![](./img/typeof.PNG)
+  ![](./img/typeof.png)
 
 - instanceof 运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上
 
@@ -271,7 +271,7 @@
 
    非严格比较值转换方式
 
-   ![](./img/==与===.PNG)
+   ![](./img/==与===.png)
 
 10. js 原型链链式的指向问题
 
@@ -326,7 +326,7 @@
 
     react15 生命周期
 
-    ![](./reactOld.PNG)
+    ![](./img/reactOld.png)
 
     React 16 之后有三个生命周期被废弃(但并未删除)
 
@@ -338,7 +338,7 @@
 
     react16 生命周期
 
-    ![](./img/reactNew.PNG)
+    ![](./img/reactNew.png)
 
 2.  react16 新增了哪些东西？
 
@@ -415,7 +415,7 @@
     - beforeDestroy（销毁前） 在实例销毁之前调用。实例仍然完全可用。
     - destroyed（销毁后） 在实例销毁之后调用。调用后，所有的事件监听器会被移除，所有的子实例也会被销毁。该钩子在服务器端渲染期间不被调用
 
-    ![](./img/vue.PNG)
+    ![](./img/vue.png)
 
 2.  vue keep-alive 的使用及实现原理
 
